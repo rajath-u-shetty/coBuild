@@ -3,7 +3,7 @@ import { PropertyCard } from "./PropertyCard"
 const properties = [
   {
     id: '1',
-    image: '/placeholder.svg?height=400&width=600',
+    images: ['/house.png', '/house.png'],
     address: '123 Main St, City, State',
     size: '2,500 sq ft',
     status: 'Occupied',
@@ -11,7 +11,7 @@ const properties = [
   },
   {
     id: '2',
-    image: '/placeholder.svg?height=400&width=600',
+    images: ['/house.png'],
     address: '456 Oak Ave, City, State',
     size: '1,800 sq ft',
     status: 'Vacant',

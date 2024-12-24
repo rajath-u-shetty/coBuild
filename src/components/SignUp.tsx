@@ -11,13 +11,13 @@ const SignUp = () => {
           Sign Up
         </h1>
         <p className="text-sm max-w-xs mx-auto text-muted-foreground">
-          By continuing, you are setting up a Radiant-Projects account and agree to our User agreement and Privacy Policy.
+          By continuing, you are setting up a CoBuild account and agree to our User agreement and Privacy Policy.
         </p>
 
         <UserAuthForm />
 
         <p className="px-8 text-center text-sm text-muted-foreground">
-          Already using Radiant-Projects?{" "}
+          Already using CoBuild?{" "}
           <Link
             href="/sign-in"
             className="hover:text-foreground text-foreground/80 text-sm underline underline-offset-4"

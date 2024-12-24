@@ -35,7 +35,7 @@ const data = [
   },
   {
     title: 'My Investments',
-    url: '/investements',
+    url: '/investments',
     icon: PiggyBank,
   },
   {
@@ -72,10 +72,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip={'Radiant - Projects'}>
+            <SidebarMenuButton tooltip={'CoBuild'}>
               <GalleryVerticalEnd className="size-4 font-bold" />
               <span className="text-sm font-semibold">
-                Radiant - Projects
+                Co<span className="text-amber-500">Build</span>
               </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
