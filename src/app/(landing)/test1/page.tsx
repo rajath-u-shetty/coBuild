@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer } from "@/components/ui/chart"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Cell, Pie, PieChart } from "recharts"
+import { Bar, BarChart, Line,LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Cell, Pie, PieChart } from "recharts"
 import { Coins } from 'lucide-react'
 
 // Static data
@@ -117,16 +117,16 @@ export default function AnalyticsPage() {
                   <ResponsiveContainer width="100%" height={200}>
                     <LineChart data={capitalAppreciationData}>
                       <XAxis dataKey="year" />
-                      <YAxis
-                        tickFormatter={(value) => `₹${(value / 1000000)}M`}
+                      <YAxis 
+                        tickFormatter={(value) => `₹${(value/1000000)}M`}
                       />
-                      <Tooltip
-                        formatter={(value: number) => [`₹${(value / 1000000)}M`]}
+                      <Tooltip 
+                        formatter={(value: number) => [`₹${(value/1000000)}M`]}
                       />
-                      <Line
-                        type="monotone"
-                        dataKey="value"
-                        stroke="#ff6b6b"
+                      <Line 
+                        type="monotone" 
+                        dataKey="value" 
+                        stroke="#ff6b6b" 
                         strokeWidth={2}
                         dot={{ fill: '#ff6b6b' }}
                       />
@@ -151,15 +151,15 @@ export default function AnalyticsPage() {
                   }}
                 >
                   <ResponsiveContainer width="100%" height={300}>
-                    <BarChart
+                    <BarChart 
                       data={investmentOptionsData}
                       layout="vertical"
                       margin={{ top: 0, right: 0, bottom: 0, left: 100 }}
                     >
                       <XAxis type="number" />
-                      <YAxis
-                        type="category"
-                        dataKey="name"
+                      <YAxis 
+                        type="category" 
+                        dataKey="name" 
                         width={100}
                       />
                       <Tooltip />
@@ -172,76 +172,76 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-12">
+          <div className="space-y-11">
             {/* Profit Margin Analysis */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Profit Margin Analysis</CardTitle>
-                <p className="text-sm text-slate-500">
-                  Understanding the Conservative Expectation of Market Growth
-                </p>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-center items-center gap-6">
-                  {/* Pie Chart */}
-                  <div className="h-[200px] w-[200px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <Pie
-                          data={[
-                            { name: "Rental Yield", value: 8.87 },
-                            { name: "Capital Yield", value: 6 },
-                            { name: "Target IRR", value: 14.71 },
-                          ]}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={60}
-                          outerRadius={80}
-                          paddingAngle={5}
-                          dataKey="value"
-                          labelLine={false}
-                        >
-                          {[
-                            { name: "Rental Yield", value: 8.87 },
-                            { name: "Capital Yield", value: 6 },
-                            { name: "Target IRR", value: 14.71 },
-                          ].map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                          ))}
-                        </Pie>
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
+        <Card>
+  <CardHeader>
+    <CardTitle>Profit Margin Analysis</CardTitle>
+    <p className="text-sm text-slate-500">
+      Understanding the Conservative Expectation of Market Growth
+    </p>
+  </CardHeader>
+  <CardContent>
+    <div className="flex justify-center items-center gap-6">
+      {/* Pie Chart */}
+      <div className="h-[200px] w-[200px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={[
+                { name: "Rental Yield", value: 8.87 },
+                { name: "Capital Yield", value: 6 },
+                { name: "Target IRR", value: 14.71 },
+              ]}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={80}
+              paddingAngle={5}
+              dataKey="value"
+              labelLine={false}
+            >
+              {[
+                { name: "Rental Yield", value: 8.87 },
+                { name: "Capital Yield", value: 6 },
+                { name: "Target IRR", value: 14.71 },
+              ].map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
 
-                  {/* Labels */}
-                  <div className="space-y-3">
-                    {[
-                      { name: "Rental Yield", value: "8.87%", color: COLORS[0] },
-                      { name: "Capital Yield", value: "6%", color: COLORS[1] },
-                      { name: "Target IRR", value: "14.71%", color: COLORS[2] },
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <div
-                          className="w-3 h-3 rounded-full"
-                          style={{ backgroundColor: item.color }}
-                        ></div>
-                        <div>
-                          <p className="text-sm font-bold text-slate-600">{item.value}</p>
-                          <p className="text-xs text-slate-500">{item.name}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+      {/* Labels */}
+      <div className="space-y-3">
+        {[
+          { name: "Rental Yield", value: "8.87%", color: COLORS[0] },
+          { name: "Capital Yield", value: "6%", color: COLORS[1] },
+          { name: "Target IRR", value: "14.71%", color: COLORS[2] },
+        ].map((item, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: item.color }}
+            ></div>
+            <div>
+              <p className="text-sm font-bold text-slate-600">{item.value}</p>
+              <p className="text-xs text-slate-500">{item.name}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
 
-                {/* Average Monthly Expected Rent */}
-                <div className="bg-[#fdf4f0] p-4 rounded-lg mt-6">
-                  <h4 className="text-sm font-medium mb-2">Average Monthly Expected Rent</h4>
-                  <div className="text-2xl font-bold">₹65,000</div>
-                  <div className="text-sm text-slate-500">Rupees/Month</div>
-                </div>
-              </CardContent>
-            </Card>
+    {/* Average Monthly Expected Rent */}
+    <div className="bg-[#fdf4f0] p-4 rounded-lg mt-6">
+      <h4 className="text-sm font-medium mb-2">Average Monthly Expected Rent</h4>
+      <div className="text-2xl font-bold">₹65,000</div>
+      <div className="text-sm text-slate-500">Rupees/Month</div>
+    </div>
+  </CardContent>
+</Card>
             {/* Expected Rent Trend & ROI */}
             <div className="grid grid-cols-2 gap-6 mt-6">
               <Card>
@@ -285,6 +285,5 @@ export default function AnalyticsPage() {
     </div>
   )
 }
-
 
 
