@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/landingpage-componentsr/Navbar";
 import { checkAuth } from "@/lib/auth/utils";
 
 export default async function AppLayout({

@@ -10,3 +10,4 @@ const MaxWidthWrapper = ({children,className}:{children:React.ReactNode ,classNa
 
 export default MaxWidthWrapper;
 
+

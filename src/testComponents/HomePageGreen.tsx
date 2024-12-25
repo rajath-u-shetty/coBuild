@@ -1,5 +1,11 @@
 
+import BenefitsSection from '@/components/landingpage-componentsr/BenefitsSection';
+import FeaturesSection from '@/components/landingpage-componentsr/FeaturesSection';
+import HeroSection from '@/components/landingpage-componentsr/Hero';
+import HighlightedListings from '@/components/landingpage-componentsr/HighlightedListings';
+import TestimonialsSection from '@/components/landingpage-componentsr/Testimonials';
 import React from 'react';
+
 // import { Card } from '@/components/ui/card';
 // import {
 //   Carousel,
@@ -11,11 +17,6 @@ import React from 'react';
 // import {
 //   MapPin
 // } from 'lucide-react';
-import BenefitsSection from "@/components/BenefitsSection";
-import HeroSection from "@/components/Hero";
-import TestimonialsSection from "@/components/Testimonials";
-import FeaturesSection from "@/components/FeaturesSection";
-import HighlightedListings from '@/components/HighlightedListings';
 
 const HomePageGreen = () => {
   // const listings = [

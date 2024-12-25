@@ -23,15 +23,15 @@ const Footer = () => {
                 className='text-sm text-muted-foreground hover:text-gray-600'>
                 Terms
               </Link>
-   <Link
+              <Link
                 href="#"
                 className='text-sm text-muted-foreground hover:text-gray-600'>
-              Privacy Policy
+                Privacy Policy
               </Link>
-   <Link
+              <Link
                 href="#"
                 className='text-sm text-muted-foreground hover:text-gray-600'>
-              Cookie Policy
+                Cookie Policy
               </Link>
 
             </div>
@@ -45,4 +45,5 @@ const Footer = () => {
 }
 
 export default Footer
+
 
