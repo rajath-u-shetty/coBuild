@@ -58,6 +58,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  File          File[]
 }
 
 model VerificationToken {
@@ -67,3 +68,17 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model File {
+  id         String @id @default(cuid())
+  name       String
+  fileUrl    String // URL on Edge Store
+  fileSize   Int
+  userId     String
+  uploadedAt String // ISO 8601 date string
+  uploadedBy String // Name or email of the uploader
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
