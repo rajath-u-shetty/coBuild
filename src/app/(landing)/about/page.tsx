@@ -50,7 +50,7 @@ const About: React.FC = () => {
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
               <Feature
                 title="Innovation"
-                description="We embrace new ideas to continuously improve our platform and processes."
+                description="Embracing creativity to advance patent-related tools and services."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -64,7 +64,7 @@ const About: React.FC = () => {
 
               <Feature
                 title="Reliability"
-                description="We commit to delivering accurate, timely, and efficient solutions."
+                description="Delivering trustworthy and efficient patent solutions."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -78,7 +78,7 @@ const About: React.FC = () => {
 
               <Feature
                 title="Security"
-                description="Client data and project confidentiality are top priorities."
+                description="Prioritizing client data privacy and security."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -92,7 +92,7 @@ const About: React.FC = () => {
 
               <Feature
                 title="Expertise"
-                description="Our team consists of legal and industry experts dedicated to helping clients protect their intellectual property."
+                description="Experts ensuring clients' intellectual property is safeguarded."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -132,4 +132,5 @@ const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {
 };
 
 export default About;
+
 

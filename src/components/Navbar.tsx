@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import MaxWidthWrapper from "./MaxwidthWrapper";
 import { buttonVariants } from "./ui/button";
-import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-zinc-800">
-            Co<span className="text-amber-500">Build</span>
+            Co<span className="text-red-500">Build</span>
           </Link>
 
           {/* Navigation Links */}
@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Authentication Links */}
           <div className="flex items-center space-x-4">
             <Link
-              href="/login"
+              href="/sign-in"
               className={buttonVariants({
                 size: "lg",
                 className:
@@ -58,7 +58,7 @@ const Navbar = () => {
             <div className="hidden sm:block h-6 w-px bg-zinc-300" />
 
             <Link
-              href="/signup"
+              href="/sign-up"
               className={buttonVariants({
                 size: "lg",
                 className:

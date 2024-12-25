@@ -24,16 +24,17 @@ const ContactPage: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
     console.log('Form Submitted', formData);
+  };
+
+  const handleAddressClick = (address: string) => {
+    const encodedAddress = encodeURIComponent(address);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
 
   const contactMethods = [
@@ -42,24 +43,26 @@ const ContactPage: React.FC = () => {
       title: 'Email',
       description: 'contact@radiatiant.com',
       link: 'mailto:contact@radiatiant.com',
+      action: (description: string) => window.location.href = `mailto:${description}`,
     },
     {
       icon: <Phone className="h-8 w-8 text-black" />,
       title: 'Phone',
-      description: '(555) 123-4567',
-      link: 'tel:+15551234567',
+      description: '+91 7406988827',
+      link: 'tel:+917406988827',
+      action: (description: string) => window.location.href = `tel:${description.replace(/\s/g, '')}`,
     },
     {
       icon: <MapPin className="h-8 w-8 text-black" />,
       title: 'Address',
-      description: '123 Radiatiant Street, City, Country',
+      description: '137/A, BBMP khata No. 4096/137/A, 30th Main, Sector-2, HSR Layout, HSR Police Station,Bangalore South ,Bangalore-560012,Karnataka ,India',
       link: '#',
+      action: (description: string) => handleAddressClick(description),
     },
   ];
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Contact Hero Section */}
       <section className="pt-16 pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -71,12 +74,15 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Methods Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
-              <Card key={index} className="border-gray-300">
+              <Card 
+                key={index} 
+                className="border-gray-300 cursor-pointer hover:shadow-lg transition-shadow"
+                onClick={() => method.action(method.description)}
+              >
                 <CardHeader>
                   <div className="h-16 w-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
                     {method.icon}
@@ -84,10 +90,8 @@ const ContactPage: React.FC = () => {
                   <CardTitle className="text-black">{method.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>
-                    <Link href={method.link} className="text-gray-600 hover:text-black">
-                      {method.description}
-                    </Link>
+                  <CardDescription className="text-gray-600 hover:text-black">
+                    {method.description}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -96,7 +100,6 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto bg-gray-100 rounded-lg p-8 shadow-lg">
@@ -104,9 +107,7 @@ const ContactPage: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-black mb-2">
-                    Full Name
-                  </label>
+                  <label htmlFor="name" className="block text-black mb-2">Full Name</label>
                   <Input
                     type="text"
                     id="name"
@@ -119,9 +120,7 @@ const ContactPage: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-black mb-2">
-                    Email Address
-                  </label>
+                  <label htmlFor="email" className="block text-black mb-2">Email Address</label>
                   <Input
                     type="email"
                     id="email"
@@ -135,9 +134,7 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="phone" className="block text-black mb-2">
-                  Phone Number
-                </label>
+                <label htmlFor="phone" className="block text-black mb-2">Phone Number</label>
                 <Input
                   type="tel"
                   id="phone"
@@ -149,9 +146,7 @@ const ContactPage: React.FC = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-black mb-2">
-                  Your Message
-                </label>
+                <label htmlFor="message" className="block text-black mb-2">Your Message</label>
                 <Textarea
                   id="message"
                   name="message"

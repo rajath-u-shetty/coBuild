@@ -65,7 +65,7 @@ export default function AnalyticsPage() {
     <div className="min-h-screen bg-[#fdf4f0]">
       <div className="container mx-auto p-6">
         <div className="space-y-2 mb-8">
-          <h1 className="text-4xl font-bold">Y-Living Properties</h1>
+          <h1 className="text-4xl font-bold">Radiant  Properties</h1>
           <h2 className="text-2xl font-semibold">Fractional Commercial Investment</h2>
           <p className="text-sm uppercase tracking-wider text-slate-600">KNOW YOUR INVESTMENT</p>
         </div>
@@ -309,4 +309,5 @@ export default function AnalyticsPage() {
     </div>
   )
 }
+
 

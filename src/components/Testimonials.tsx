@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
       verified: true,
       rating: 5,
       text: "Their property management services are top-notch. I've been getting consistent returns on my investments while their team handles all the complexities.",
-      image: "users/user-3.png"
+      image: "users/user-4.png"
     }
   ];
 
