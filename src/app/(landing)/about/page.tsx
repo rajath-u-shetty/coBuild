@@ -113,7 +113,7 @@ const About: React.FC = () => {
 type FeatureProps = {
   title: string;
   description: string;
-  icon: any;
+  icon: React.ReactNode;
 };
 
 const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {

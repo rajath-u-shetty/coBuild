@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -75,7 +75,7 @@ const ContactPage: React.FC = () => {
           >
             <h1 className="text-5xl font-bold mb-6 text-primary">Get in Touch</h1>
             <p className="text-xl text-gray-600">
-              We're here to help and answer any questions you might have. We look forward to hearing from you!
+              We&apos;re here to help and answer any questions you might have. We look forward to hearing from you!
             </p>
           </motion.div>
         </div>
