@@ -3,9 +3,9 @@
 import React from 'react';
 import { Star, ArrowRight, Building2, Users, Wallet } from 'lucide-react';
 import { motion } from 'framer-motion';
+import MaxWidthWrapper from './MaxwidthWrapper';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import MaxWidthWrapper from './MaxwidthWrapper';
 
 const features = [
   {
