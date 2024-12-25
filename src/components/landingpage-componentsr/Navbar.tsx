@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Authentication Links */}
           <div className="flex items-center space-x-4">
             <Link
-              href="/login"
+              href="/sign-in"
               className={buttonVariants({
                 size: "lg",
                 className:
@@ -58,7 +58,7 @@ const Navbar = () => {
             <div className="hidden sm:block h-6 w-px bg-zinc-300" />
 
             <Link
-              href="/signup"
+              href="/sign-up"
               className={buttonVariants({
                 size: "lg",
                 className:
