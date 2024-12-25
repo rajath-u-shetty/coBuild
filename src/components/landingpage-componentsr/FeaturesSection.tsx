@@ -49,7 +49,7 @@ const FeaturesSection = () => {
     {
       id: 4,
       icon: <Users className="w-12 h-12 text-red-500" />,
-      title: "Community Building",
+      title: "Community Investments",
       description: "Connect with like-minded investors and build strong networks. Access educational workshops and mentorship programs.",
       bulletPoints: [
         "Investor networking",

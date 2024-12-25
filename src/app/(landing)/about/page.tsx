@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
           <div className="max-w-3xl text-center mx-auto">
             <h1 className="block font-medium text-gray-900 text-4xl sm:text-7xl md:text-6xl lg:text-7xl">
-              About Radiatiant Projects
+              About Radiant Projects
             </h1>
           </div>
 
@@ -75,7 +75,7 @@ const About: React.FC = () => {
                 }
               />
               <Feature
-                title="Community Building"
+                title="Community Investments"
                 description="Fostering collaboration, trust, and shared success among investors and developers."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">

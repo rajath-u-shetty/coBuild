@@ -57,7 +57,7 @@ const ContactPage: React.FC = () => {
     {
       icon: <MapPin className="h-8 w-8 text-primary" />,
       title: 'Address',
-      description: '137/A, BBMP khata No. 4096/137/A, 30th Main, Sector-2, HSR Layout, HSR Police Station, Bangalore South, Bangalore-560012, Karnataka, India',
+      description: '137/A, 30th Main, Sector-2, HSR Layout, Bangalore-560012, Karnataka, India',
       link: '#',
       action: (description: string) => handleAddressClick(description),
     },
@@ -67,7 +67,7 @@ const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900">
       <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -91,8 +91,8 @@ const ContactPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card 
-                  className="border-none shadow-lg hover:shadow-xl transition-shadow cursor-pointer bg-gradient-to-br from-gray-50 to-gray-100"
+                <Card
+                  className="flex flex-col justify-between h-full border-none shadow-lg hover:shadow-xl transition-shadow cursor-pointer bg-gradient-to-br from-gray-50 to-gray-100"
                   onClick={() => method.action(method.description)}
                 >
                   <CardHeader>
@@ -115,7 +115,7 @@ const ContactPage: React.FC = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

@@ -77,7 +77,6 @@ const HomePageGreen = () => {
       {/* Benefits Section */}
       <BenefitsSection />
       {/* Customer Testimonials */}
-      <TestimonialsSection />
 
 
       {/* Highlighted Listings */}

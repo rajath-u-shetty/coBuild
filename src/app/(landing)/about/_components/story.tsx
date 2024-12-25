@@ -46,7 +46,7 @@ const PropertyManagement: React.FC = () => {
                             key={event.step} 
                             className="relative transform hover:-translate-y-2 transition-all duration-300 ease-in-out"
                         >
-                            <div className="relative bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <div className="flex flex-col justify-between h-full relative bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                                 {/* Animated number badge */}
                                 <div
                                     className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full h-12 w-12 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
