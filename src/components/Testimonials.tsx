@@ -1,7 +1,6 @@
 import React from 'react';
 import { Star, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -27,7 +26,7 @@ const TestimonialsSection = () => {
       verified: true,
       rating: 5,
       text: "Their property management services are top-notch. I've been getting consistent returns on my investments while their team handles all the complexities.",
-      image: "users/user-3.png"
+      image: "/users/user-3.png"
     },
     {
       id: 4,
@@ -35,7 +34,7 @@ const TestimonialsSection = () => {
       verified: true,
       rating: 5,
       text: "Their property management services are top-notch. I've been getting consistent returns on my investments while their team handles all the complexities.",
-      image: "users/user-4.jpg"
+      image: "/users/user-4.jpg"
     }
   ];
 
@@ -68,7 +67,7 @@ const TestimonialsSection = () => {
 
                   {/* Author Info */}
                   <div className="flex gap-4 mt-2">
-                    <Image
+                    <img
                       src={testimonial.image}
                       alt={`${testimonial.author} avatar`}
                       className="h-12 w-12 rounded-full object-cover bg-gray-200"

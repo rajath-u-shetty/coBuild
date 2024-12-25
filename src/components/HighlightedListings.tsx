@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from 'next/image'
 
 interface Listing {
   id: number
@@ -71,7 +70,7 @@ export default function HighlightedListings() {
                 >
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="bg-gray-200 h-48 flex items-center justify-center">
-                      <Image 
+                      <img 
                         src="/api/placeholder/400/320"
                         alt={listing.title}
                         className="w-full h-full object-cover"
