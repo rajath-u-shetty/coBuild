@@ -3,7 +3,6 @@ import BenefitsSection from '@/components/landingpage-componentsr/BenefitsSectio
 import FeaturesSection from '@/components/landingpage-componentsr/FeaturesSection';
 import HeroSection from '@/components/landingpage-componentsr/Hero';
 import HighlightedListings from '@/components/landingpage-componentsr/HighlightedListings';
-import TestimonialsSection from '@/components/landingpage-componentsr/Testimonials';
 import React from 'react';
 
 // import { Card } from '@/components/ui/card';
