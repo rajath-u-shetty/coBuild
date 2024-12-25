@@ -20,39 +20,16 @@ const TeamSection: React.FC = () => {
       description:
         "Prof. Nidhi Srivatsa brings a wealth of knowledge in legal standards and ensures all projects comply with the latest regulations.",
     },
-    {
-      name: "Shruti Singh",
-      role: "Team Lead",
-      description:
-        "As a dedicated Team Lead, Shruti Singh ensures all team members are aligned with project goals and timelines.",
-    },
-    {
-      name: "Vs Vivek T",
-      role: "Team Lead",
-      description:
-        "Vivek provides strategic direction and collaborates with team members to achieve optimal outcomes for clients.",
-    },
-    {
-      name: "Aashish M Kumar",
-      role: "Team Lead",
-      description:
-        "Known for his analytical skills, Aashish leads his team to meticulously handle each step of patent solutions.",
-    },
-    {
-      name: "Smriti Sanya",
-      role: "Team Lead",
-      description:
-        "Smriti's expertise in client relations and project coordination keeps projects running smoothly and clients informed.",
-    },
+  
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-red-50 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the experts behind Patentrac&apos;s success
+            Meet the experts behind Patentrac's success
           </p>
         </div>
 
@@ -84,4 +61,5 @@ const TeamSection: React.FC = () => {
 };
 
 export default TeamSection;
+
 

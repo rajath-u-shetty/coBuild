@@ -5,17 +5,17 @@ import OurStory from './_components/story';
 const About: React.FC = () => {
   return (
     <div>
-      <div className="bg-primary-500">
+      <div className="bg-gradient-to-b from-red-50 to-white">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
           <div className="max-w-3xl text-center mx-auto">
             <h1 className="block font-medium text-gray-900 text-4xl sm:text-7xl md:text-6xl lg:text-7xl">
-              About Patentrac
+              About Radiatiant Projects
             </h1>
           </div>
 
           <div className="max-w-3xl text-center mx-auto">
             <p className="text-lg text-gray-900">
-              Empowering innovators and legal experts with an integrated platform for efficient, reliable patent solutions.
+              Redefining real estate through innovation, collaboration, and cutting-edge solutions.
             </p>
           </div>
 
@@ -37,19 +37,20 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        {/* Our Mission Section */}
         <section className="bg-primary-50 py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Mission</h2>
               <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                Empowering innovators and legal experts with an integrated platform for efficient, reliable patent solutions.
+                To democratize real estate investment, simplify property management, and empower communities through innovative solutions and expert guidance.
               </p>
             </div>
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
               <Feature
-                title="Innovation"
-                description="Embracing creativity to advance patent-related tools and services."
+                title="Fractional Investments"
+                description="Revolutionizing real estate by enabling affordable, shared ownership of premium properties."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -60,24 +61,22 @@ const About: React.FC = () => {
                   </svg>
                 }
               />
-
               <Feature
-                title="Reliability"
-                description="Delivering trustworthy and efficient patent solutions."
+                title="Property Management"
+                description="Comprehensive end-to-end property care, ensuring stress-free ownership and operations."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fillRule="evenodd"
-                      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clipRule="evenodd"
                     />
                   </svg>
                 }
               />
-
               <Feature
-                title="Security"
-                description="Prioritizing client data privacy and security."
+                title="Community Building"
+                description="Fostering collaboration, trust, and shared success among investors and developers."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -88,10 +87,9 @@ const About: React.FC = () => {
                   </svg>
                 }
               />
-
               <Feature
-                title="Expertise"
-                description="Experts ensuring clients' intellectual property is safeguarded."
+                title="Data-Driven Insights"
+                description="Empowering investors with advanced analytics for smarter, more confident decisions."
                 icon={
                   <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -115,7 +113,7 @@ const About: React.FC = () => {
 type FeatureProps = {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: any;
 };
 
 const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { Star, ArrowRight, Building2, Users, Wallet } from 'lucide-react';
+import { Check, Star, ArrowRight, Building2, Users, Wallet } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MaxWidthWrapper from './MaxwidthWrapper';
 import { Button } from '@/components/ui/button';
@@ -22,6 +22,75 @@ const features = [
     icon: Wallet,
     title: 'Secure Investment Process',
     description: 'Safe and transparent transactions'
+  }
+];
+
+const propertyImages = [
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Luxury Beachfront Villa",
+    subtitle: "Premium Investment Opportunity",
+    gridClass: "col-span-12 row-span-4"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Commercial Spaces",
+    subtitle: "High-yield investments",
+    gridClass: "col-span-6 row-span-3"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE",
+    title: "Community Living",
+    subtitle: "Modern Lifestyle",
+    gridClass: "col-span-6 row-span-3"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Luxury Interior",
+    subtitle: "Elegant Design",
+    gridClass: "col-span-4 row-span-3"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE",
+    title: "Modern Architecture",
+    subtitle: "Contemporary Design",
+    gridClass: "col-span-4 row-span-3"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Premium Amenities",
+    subtitle: "Luxury Living",
+    gridClass: "col-span-4 row-span-3"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE",
+    title: "Urban Living",
+    subtitle: "City Center Properties",
+    gridClass: "col-span-6 row-span-2"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Smart Homes",
+    subtitle: "Technology Integration",
+    gridClass: "col-span-6 row-span-2"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE",
+    title: "Sustainable Living",
+    subtitle: "Eco-friendly Properties",
+    gridClass: "col-span-4 row-span-2"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md",
+    title: "Investment Properties",
+    subtitle: "High ROI Opportunities",
+    gridClass: "col-span-4 row-span-2"
+  },
+  {
+    src: "https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE",
+    title: "Vacation Homes",
+    subtitle: "Holiday Retreats",
+    gridClass: "col-span-4 row-span-2"
   }
 ];
 
@@ -49,7 +118,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Updated background with smooth transition */}
+      {/* Background with smooth transition */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-100 via-red-50/50 to-white transition-colors duration-1000 ease-in-out" />
 
       {/* Enhanced decorative elements */}
@@ -58,6 +127,7 @@ const HeroSection = () => {
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-red-50/50 rounded-full blur-3xl opacity-30 animate-pulse" />
 
       <MaxWidthWrapper className="relative pt-24 pb-32 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:pt-32 xl:pt-36 lg:pb-40">
+        {/* Left side content */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -89,7 +159,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="mt-8 text-red-600 font-semibold text-lg text-center lg:text-left"
             >
-              &quot;Building a Collaborative Ecosystem in Real Estate for Sustainable Growth and Maximum Value.&quot;
+              "Building a Collaborative Ecosystem in Real Estate for Sustainable Growth and Maximum Value."
             </motion.p>
 
             <motion.p
@@ -132,7 +202,7 @@ const HeroSection = () => {
                     variants={itemVariants}
                     whileHover={{ scale: 1.1 }}
                     className="inline-block h-12 w-12 rounded-full ring-4 ring-white"
-                    src="/api/placeholder/48/48"
+                    src={`users/user-${num}.png`}
                     alt={`investor-${num}`}
                   />
                 ))}
@@ -158,54 +228,37 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
+        {/* Right side with new image grid */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="relative mt-16 lg:mt-0 px-6 lg:px-0"
         >
-          <div className="grid grid-cols-12 grid-rows-6 gap-4 h-[600px]">
-            <div className="col-span-12 row-span-4 relative rounded-2xl overflow-hidden shadow-2xl group">
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4 }}
-                src="https://utfs.io/f/9iW76r34sJuYXbG2kqNZneKOpYWQ5TB21cDhkb3UHGagq9md"
-                alt="Luxury Property"
-                className="w-full h-full object-cover transition-transform"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-white font-semibold text-xl">Luxury Beachfront Villa</h3>
-                  <p className="text-amber-300">Premium Investment Opportunity</p>
-                </div>
-              </div>
-            </div>
-
-            {[
-              { title: 'Commercial Spaces', subtitle: 'High-yield investments' },
-              { title: 'Community Living', subtitle: 'Modern Lifestyle' }
-            ].map((item, index) => (
+          <div className="grid grid-cols-12 grid-rows-16 gap-4 h-[1000px]">
+            {propertyImages.map((image, index) => (
               <div
                 key={index}
-                className="col-span-6 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+                className={`${image.gridClass} relative rounded-2xl overflow-hidden shadow-xl group`}
               >
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4 }}
-                  src="https://utfs.io/f/9iW76r34sJuY6PBJ8jdnu5YhoHNermSzsXlBPcfnyx1MJbLE"
-                  alt={item.title}
+                  src={image.src}
+                  alt={image.title}
                   className="w-full h-full object-cover transition-transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 p-4">
-                    <h3 className="text-white font-semibold">{item.title}</h3>
-                    <p className="text-amber-300 text-sm">{item.subtitle}</p>
+                    <h3 className="text-white font-semibold">{image.title}</h3>
+                    <p className="text-amber-300 text-sm">{image.subtitle}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Decorative elements */}
           <div className="absolute -right-20 -bottom-20 w-40 h-40 bg-red-100 rounded-full blur-3xl opacity-50" />
           <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-gradient-to-br from-red-200 to-red-100 rounded-full blur-2xl opacity-80" />
         </motion.div>

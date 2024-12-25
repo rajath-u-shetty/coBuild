@@ -8,13 +8,14 @@ interface Listing {
   title: string
   price: string
   return: string
+  image: string
 }
 
 const listings: Listing[] = [
-  { id: 1, title: 'Luxury Villa', price: '$500,000', return: '8% p.a.' },
-  { id: 2, title: 'City Apartment', price: '$250,000', return: '6% p.a.' },
-  { id: 3, title: 'Beachfront Property', price: '$750,000', return: '10% p.a.' },
-  { id: 4, title: 'Mountain Retreat', price: '$400,000', return: '7% p.a.' },
+  { id: 1, title: 'Luxury Villa', price: '$500,000', return: '8% p.a.', image: '/carousel.jpeg' },
+  { id: 2, title: 'City Apartment', price: '$250,000', return: '6% p.a.', image: '/carousel2.jpeg' },
+  { id: 3, title: 'Beachfront Property', price: '$750,000', return: '10% p.a.', image: '/carousel3.jpeg' },
+  { id: 4, title: 'Mountain Retreat', price: '$400,000', return: '7% p.a.', image: '/carousel4.jpeg' },
 ]
 
 export default function HighlightedListings() {
@@ -54,24 +55,24 @@ export default function HighlightedListings() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div 
+          <div
             className="relative overflow-hidden"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {listings.map((listing) => (
-                <div 
+                <div
                   key={listing.id}
                   className="w-full flex-shrink-0 px-4"
                 >
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="bg-gray-200 h-48 flex items-center justify-center">
-                      <img 
-                        src="/api/placeholder/400/320"
+                      <img
+                        src={listing.image}
                         alt={listing.title}
                         className="w-full h-full object-cover"
                       />
@@ -115,9 +116,8 @@ export default function HighlightedListings() {
               {listings.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-primary w-4' : 'bg-gray-300'
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-primary w-4' : 'bg-gray-300'
+                    }`}
                   onClick={() => setCurrentIndex(index)}
                 />
               ))}
@@ -128,4 +128,5 @@ export default function HighlightedListings() {
     </div>
   )
 }
+
 

@@ -1,10 +1,12 @@
-"use client";
+'use client';
+
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 
 interface ContactFormData {
   name: string;
@@ -29,6 +31,7 @@ const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form Submitted', formData);
+    // Add your form submission logic here
   };
 
   const handleAddressClick = (address: string) => {
@@ -38,75 +41,91 @@ const ContactPage: React.FC = () => {
 
   const contactMethods = [
     {
-      icon: <Mail className="h-8 w-8 text-black" />,
+      icon: <Mail className="h-8 w-8 text-primary" />,
       title: 'Email',
       description: 'contact@radiatiant.com',
       link: 'mailto:contact@radiatiant.com',
       action: (description: string) => window.location.href = `mailto:${description}`,
     },
     {
-      icon: <Phone className="h-8 w-8 text-black" />,
+      icon: <Phone className="h-8 w-8 text-primary" />,
       title: 'Phone',
       description: '+91 7406988827',
       link: 'tel:+917406988827',
       action: (description: string) => window.location.href = `tel:${description.replace(/\s/g, '')}`,
     },
     {
-      icon: <MapPin className="h-8 w-8 text-black" />,
+      icon: <MapPin className="h-8 w-8 text-primary" />,
       title: 'Address',
-      description: '137/A, BBMP khata No. 4096/137/A, 30th Main, Sector-2, HSR Layout, HSR Police Station,Bangalore South ,Bangalore-560012,Karnataka ,India',
+      description: '137/A, BBMP khata No. 4096/137/A, 30th Main, Sector-2, HSR Layout, HSR Police Station, Bangalore South, Bangalore-560012, Karnataka, India',
       link: '#',
       action: (description: string) => handleAddressClick(description),
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      <section className="pt-16 pb-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900">
+      <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg text-gray-600">
-              We&apos;re here to help and answer any questions you might have.
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h1 className="text-5xl font-bold mb-6 text-primary">Get in Touch</h1>
+            <p className="text-xl text-gray-600">
+              We're here to help and answer any questions you might have. We look forward to hearing from you!
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
-              <Card 
-                key={index} 
-                className="border-gray-300 cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => method.action(method.description)}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <CardHeader>
-                  <div className="h-16 w-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
-                    {method.icon}
-                  </div>
-                  <CardTitle className="text-black">{method.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 hover:text-black">
-                    {method.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+                <Card 
+                  className="border-none shadow-lg hover:shadow-xl transition-shadow cursor-pointer bg-gradient-to-br from-gray-50 to-gray-100"
+                  onClick={() => method.action(method.description)}
+                >
+                  <CardHeader>
+                    <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                      {method.icon}
+                    </div>
+                    <CardTitle className="text-2xl font-semibold text-primary text-center">{method.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 hover:text-primary transition-colors text-center">
+                      {method.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto bg-gray-100 rounded-lg p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-center mb-6">Send Us a Message</h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-2xl"
+          >
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-black mb-2">Full Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                   <Input
                     type="text"
                     id="name"
@@ -114,12 +133,12 @@ const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your full name"
-                    className="border-gray-300"
+                    className="border-gray-300 focus:ring-primary focus:border-primary"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-black mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                   <Input
                     type="email"
                     id="email"
@@ -127,13 +146,13 @@ const ContactPage: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Enter your email"
-                    className="border-gray-300"
+                    className="border-gray-300 focus:ring-primary focus:border-primary"
                     required
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="phone" className="block text-black mb-2">Phone Number</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                 <Input
                   type="tel"
                   id="phone"
@@ -141,11 +160,11 @@ const ContactPage: React.FC = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="Enter your phone number"
-                  className="border-gray-300"
+                  className="border-gray-300 focus:ring-primary focus:border-primary"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-black mb-2">Your Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
                 <Textarea
                   id="message"
                   name="message"
@@ -153,18 +172,18 @@ const ContactPage: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder="Write your message here"
                   rows={5}
-                  className="border-gray-300"
+                  className="border-gray-300 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-black hover:bg-gray-800 text-white flex items-center justify-center gap-2"
+                className="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2 py-6 text-lg font-semibold rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105"
               >
-                <Send className="h-5 w-5" /> Send Message
+                Send Message <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
@@ -172,4 +191,6 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
+
+
 

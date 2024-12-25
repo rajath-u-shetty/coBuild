@@ -7,50 +7,79 @@ interface TimelineEvent {
 }
 
 const timelineEvents: TimelineEvent[] = [
-    { step: 1, title: "Inception", description: "Patentrac was founded to streamline patent solutions for legal professionals and innovators." },
-    { step: 2, title: "Development Phase", description: "Through collaboration with experts, the platform evolved, integrating key features to address the complex needs of patent filing and management." },
-    { step: 3, title: "Launch", description: "Patentrac officially launched, receiving positive feedback for its user-friendly and secure environment." },
-    { step: 4, title: "Current Impact", description: "Today, Patentrac supports clients worldwide in protecting their innovations with a reliable and secure platform." },
+    { step: 1, title: "Maintenance & Repairs", description: "Scheduled inspections, preventive maintenance, and on-demand repair services for plumbing, electricals, and structural issues." },
+    { step: 2, title: "Tenant Management", description: "Efficient tenant screening, lease agreements, rent collection, and handling tenant queries with professionalism." },
+    { step: 3, title: "Property Performance Analytics", description: "Real-time metrics on rental income, maintenance expenses, and occupancy rates with customized performance reports." },
+    { step: 4, title: "Renovations & Upgrades", description: "Managing renovation projects to increase property value and suggesting modern upgrades based on market trends." },
 ];
 
-const OurStory: React.FC = () => {
+const PropertyManagement: React.FC = () => {
     return (
-        <section className="bg-primary-50 py-12 sm:py-16 lg:py-20">
+        <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-16 sm:py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Story</h2>
-                    <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">The journey of Patentrac from inception to global impact</p>
+                {/* Header Section with animation */}
+                <div className="text-center animate-fade-in">
+                    <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400">
+                        Property Management
+                    </h2>
+                    <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Comprehensive and reliable solutions to ensure peace of mind for property owners.
+                    </p>
                 </div>
-                <div className="mt-16">
-                    <div className="relative">
-                        <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                            <div className="w-full border-t border-primary-300"></div>
-                        </div>
-                        <div className="relative flex justify-center">
-                            <span className="px-3 bg-white text-lg font-medium text-primary-500">Timeline</span>
-                        </div>
+
+                {/* Timeline Header */}
+                <div className="mt-16 relative">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div className="w-full border-t-2 border-primary-300"></div>
                     </div>
-                    <div className="mt-8 max-w-lg mx-auto grid gap-8 lg:grid-cols-4 lg:max-w-none">
-                        {timelineEvents.map(event => (
-                            <div key={event.step} className="relative">
-                                <div className="relative bg-white p-6 rounded-lg shadow-lg">
-                                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-500 rounded-full h-8 w-8 flex items-center justify-center">
-                                        <span className="text-white font-bold">{event.step}</span>
-                                    </div>
-                                    <h3 className="text-lg font-medium text-gray-900 mb-2">{event.title}</h3>
-                                    <p className="text-base text-gray-600">{event.description}</p>
+                    <div className="relative flex justify-center">
+                        <span className="px-6 py-2 bg-gradient-to-r from-primary-50 via-gray-50 to-primary-50 text-lg font-medium text-primary-600 rounded-full shadow-sm">
+                            Key Features
+                        </span>
+                    </div>
+                </div>
+
+                {/* Timeline Events with stagger animation */}
+                <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    {timelineEvents.map((event) => (
+                        <div 
+                            key={event.step} 
+                            className="relative transform hover:-translate-y-2 transition-all duration-300 ease-in-out"
+                        >
+                            <div className="relative bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                                {/* Animated number badge */}
+                                <div
+                                    className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full h-12 w-12 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+                                    aria-label={`Step ${event.step}`}
+                                >
+                                    <span className="text-red-300 font-bold text-lg">{event.step}</span>
+                                </div>
+                                
+                                {/* Content with hover effect */}
+                                <div className="mt-8 group cursor-pointer">
+                                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+                                        {event.title}
+                                    </h3>
+                                    <p className="mt-3 text-base text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
+                                        {event.description}
+                                    </p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-                <div className="mt-16 text-center">
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        As we continue to grow and evolve, our commitment to innovation, reliability, and client success remains unwavering. Join us in shaping the future of patent management and protection.
+
+                {/* Enhanced Closing Section */}
+                <div className="mt-20 text-center">
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        At Radiatiant Projects, we ensure that your property is managed with precision and care. From tenant handling to renovations, we have you covered every step of the way.
                     </p>
-                    <div className="mt-8">
-                        <a href="/services" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
-                            Learn More About Our Services
+                    <div className="mt-10">
+                        <a
+                            href="/services"
+                            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg text-red-300 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 transform hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                        >
+                            Explore Property Management Services
                         </a>
                     </div>
                 </div>
@@ -59,5 +88,5 @@ const OurStory: React.FC = () => {
     );
 };
 
-export default OurStory;
+export default PropertyManagement;
 
