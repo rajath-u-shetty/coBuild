@@ -15,16 +15,16 @@ const roiTrendData = [
   { name: "2042", value: 239, label: "2042-239%" }
 ]
 
-const capitalYieldData = [
-  { name: "2024", value: 5.8, label: "2024-5.8%" },
-  { name: "2027", value: 6.1, label: "2027-6.1%" },
-  { name: "2030", value: 6.9, label: "2030-6.9%" },
-  { name: "2033", value: 8.2, label: "2033-8.2%" },
-  { name: "2036", value: 10.3, label: "2036-10.3%" },
-  { name: "2039", value: 13.8, label: "2039-13.8%" },
-  { name: "2042", value: 19.6, label: "2042-19.6%" },
-  { name: "2045", value: 29.4, label: "2045-29.4%" }
-]
+// const capitalYieldData = [
+//   { name: "2024", value: 5.8, label: "2024-5.8%" },
+//   { name: "2027", value: 6.1, label: "2027-6.1%" },
+//   { name: "2030", value: 6.9, label: "2030-6.9%" },
+//   { name: "2033", value: 8.2, label: "2033-8.2%" },
+//   { name: "2036", value: 10.3, label: "2036-10.3%" },
+//   { name: "2039", value: 13.8, label: "2039-13.8%" },
+//   { name: "2042", value: 19.6, label: "2042-19.6%" },
+//   { name: "2045", value: 29.4, label: "2045-29.4%" }
+// ]
 
 const capitalAppreciationData = [
   { year: "Jul-24", value: 5000000 },
@@ -56,36 +56,36 @@ const rentTrendData = [
   { year: "2030", rent: "Rs.113.9" }
 ]
 
-interface CustomLabelProps {
-  cx: number;
-  cy: number;
-  midAngle: number;
-  innerRadius: number;
-  outerRadius: number;
-  label: string;
-}
+// interface CustomLabelProps {
+//   cx: number;
+//   cy: number;
+//   midAngle: number;
+//   innerRadius: number;
+//   outerRadius: number;
+//   label: string;
+// }
 
 const COLORS = ['#ff6b6b', '#ff8787', '#ffa5a5', '#ffc9c9', '#ffe3e3']
 
-const CustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, label }: CustomLabelProps) => {
-  const RADIAN = Math.PI / 180
-  const radius = outerRadius * 1.2
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
-
-  return (
-    <text
-      x={x}
-      y={y}
-      fill="#666"
-      textAnchor={x > cx ? 'start' : 'end'}
-      dominantBaseline="central"
-      fontSize="11"
-    >
-      {label}
-    </text>
-  )
-}
+// const CustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, label }: CustomLabelProps) => {
+//   const RADIAN = Math.PI / 180
+//   const radius = outerRadius * 1.2
+//   const x = cx + radius * Math.cos(-midAngle * RADIAN)
+//   const y = cy + radius * Math.sin(-midAngle * RADIAN)
+//
+//   return (
+//     <text
+//       x={x}
+//       y={y}
+//       fill="#666"
+//       textAnchor={x > cx ? 'start' : 'end'}
+//       dominantBaseline="central"
+//       fontSize="11"
+//     >
+//       {label}
+//     </text>
+//   )
+// }
 
 export default function AnalyticsPage() {
   return (

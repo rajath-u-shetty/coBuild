@@ -40,7 +40,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 export function NavUser() {
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const user = session?.user;
 

@@ -21,7 +21,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-  useSidebar,
+  // useSidebar,
 } from '@/components/ui/sidebar';
 import { NavUser } from './Nav-User';
 import { NavMain } from './Nav-Main';
@@ -66,7 +66,7 @@ const data = [
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { state } = useSidebar();
+  // const { state } = useSidebar();
   return (
     <Sidebar variant="floating" collapsible="icon" {...props}>
       <SidebarHeader>

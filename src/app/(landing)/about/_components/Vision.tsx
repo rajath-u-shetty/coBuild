@@ -3,7 +3,7 @@ import React from 'react';
 interface Value {
     title: string;
     description: string;
-    icon: any;
+    icon: React.ReactNode;
 }
 
 const values: Value[] = [

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import MaxWidthWrapper from './MaxWidthWrapper'
+import MaxWidthWrapper from './MaxwidthWrapper'
 
 const Footer = () => {
   return (

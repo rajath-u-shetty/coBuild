@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
 import { Icons } from "./Icons";
-import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Button } from "./ui/LoadingButton";
 
 interface UserAuthFormProps {
   className?: string;
@@ -19,6 +19,7 @@ const UserAuthForm = ({ className }: UserAuthFormProps) => {
     try {
       await signIn("google");
     } catch (error) {
+      console.log(error);
       toast({
         title: "There was a problem",
         description: "There was an error logging you in. Please try again later",

@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react';
-import { Check, Star, ArrowRight, Building2, Users, Wallet } from 'lucide-react';
+import { Star, ArrowRight, Building2, Users, Wallet } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from './MaxwidthWrapper';
 
 const features = [
   {
@@ -89,7 +89,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="mt-8 text-red-600 font-semibold text-lg text-center lg:text-left"
             >
-              "Building a Collaborative Ecosystem in Real Estate for Sustainable Growth and Maximum Value."
+              &quot;Building a Collaborative Ecosystem in Real Estate for Sustainable Growth and Maximum Value.&quot;
             </motion.p>
 
             <motion.p

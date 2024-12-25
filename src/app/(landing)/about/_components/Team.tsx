@@ -52,7 +52,7 @@ const TeamSection: React.FC = () => {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the experts behind Patentrac's success
+            Meet the experts behind Patentrac&apos;s success
           </p>
         </div>
 

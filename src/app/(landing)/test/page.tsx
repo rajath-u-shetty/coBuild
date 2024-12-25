@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer } from "@/components/ui/chart"
-import { Bar, BarChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Cell, Pie, PieChart } from "recharts"
+import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Cell, Pie, PieChart } from "recharts"
 import { IndianRupee, TrendingUp, LineChart, Target } from 'lucide-react'
 
 // Static data
@@ -145,7 +145,7 @@ export default function AnalyticsPage() {
                 cy,
                 midAngle,
                 outerRadius,
-                value,
+                // value,
                 name,
               }) => {
                 const RADIAN = Math.PI / 180;
@@ -219,9 +219,9 @@ export default function AnalyticsPage() {
                         cx,
                         cy,
                         midAngle,
-                        innerRadius,
+                        // innerRadius,
                         outerRadius,
-                        value,
+                        // value,
                         name
                       }) => {
                         const RADIAN = Math.PI / 180;

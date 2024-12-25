@@ -1,6 +1,5 @@
 import React from 'react';
 import TeamSection from './_components/Team';
-import OurValuesAndVision from './_components/Vision';
 import OurStory from './_components/story';
 
 const About: React.FC = () => {
@@ -116,7 +115,7 @@ const About: React.FC = () => {
 type FeatureProps = {
   title: string;
   description: string;
-  icon: any;
+  icon: React.ReactNode;
 };
 
 const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {

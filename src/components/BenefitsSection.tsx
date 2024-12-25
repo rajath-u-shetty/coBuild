@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const BenefitsSection = () => {
@@ -49,19 +50,19 @@ const BenefitsSection = () => {
               {/* Circular images with connecting lines */}
               <div className="absolute top-20 left-20">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img src="/house.jpeg" alt="Real Estate Investment" className="w-full h-full object-cover" />
+                  <Image src="/house.jpeg" alt="Real Estate Investment" className="w-full h-full object-cover" />
                 </div>
               </div>
 
               <div className="absolute top-40 right-20">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img src="/house2.jpeg" alt="Property Management" className="w-full h-full object-cover" />
+                  <Image src="/house2.jpeg" alt="Property Management" className="w-full h-full object-cover" />
                 </div>
               </div>
 
               <div className="absolute bottom-40 left-40">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img src="/community.jpeg" alt="Community" className="w-full h-full object-cover" />
+                  <Image src="/community.jpeg" alt="Community" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -92,7 +93,7 @@ const BenefitsSection = () => {
               {benefits.map((benefit) => (
                 <div key={benefit.id} className="flex gap-4">
                   <div className={`flex-shrink-0 w-12 h-12 ${benefit.bgColor} rounded-lg flex items-center justify-center`}>
-                    <img src={benefit.icon} alt={benefit.title} className="w-9 h-9" />
+                    <Image src={benefit.icon} alt={benefit.title} className="w-9 h-9" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
